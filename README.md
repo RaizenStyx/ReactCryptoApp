@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Crypto Tracker App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+The **Crypto Tracker App** allows users to track real-time prices of popular cryptocurrencies. The app fetches data from the CoinGecko API, displaying the current price and 24-hour percentage change for each cryptocurrency. Additionally, users can add custom cryptocurrencies by entering the coin's name (e.g., "bitcoin", "ethereum") into an input field. The app will display the newly added cryptocurrencies in a grid format along with their prices and price changes.
 
-In the project directory, you can run:
+The app also includes a **carousel** to display cryptocurrency cards, which auto-scrolls and can be manually dragged by the user.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Real-Time Data**: The app fetches the latest cryptocurrency prices and percentage changes from the [CoinGecko API](https://www.coingecko.com/).
+- **Add Custom Cryptos**: Users can input any cryptocurrency (by its CoinGecko ID) to add it to the grid.
+- **Auto Scroll Carousel**: Displays cryptocurrencies in a scrollable carousel. The carousel auto-scrolls and can be manually dragged.
+- **Responsive Design**: The layout is designed to be responsive, ensuring a smooth experience across different devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React**: The front-end library used to build the app.
+- **Axios**: For making HTTP requests to the CoinGecko API.
+- **CoinGecko API**: The API used to fetch cryptocurrency prices and data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
+- **View Cryptos**: The app will automatically load the current prices and 24-hour percentage changes for a default list of cryptocurrencies.
 
-### `npm run build`
+- **Add Cryptos**: Use the input field below the carousel to add a new cryptocurrency by typing its CoinGecko ID (e.g., "bitcoin", "ethereum"). Press Enter or click the Add button to add the coin to the grid.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Drag to Scroll**: Click and hold the carousel to drag and view more cryptocurrency cards. The carousel will also auto-scroll every few seconds.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Code Overview
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Components
 
-### `npm run eject`
+- **CryptoTracker**: This is the main component responsible for displaying the carousel and fetching cryptocurrency data. It uses the useEffect hook to call the CoinGecko API and update the state periodically.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **CryptoGrid**: This component allows users to add custom cryptocurrencies to a grid. It handles fetching the data for the new crypto and displays it with the price and percentage change.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Functionality
+- The CryptoTracker component fetches cryptocurrency data and sets it in the state. This data includes price and 24-hour change percentage.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- The CryptoGrid component allows users to input the name of a cryptocurrency and add it to the grid. The data for the custom coin is fetched from the API and displayed alongside other coins.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The carousel automatically scrolls and can be dragged by the user to view more coins. It is continuously looped to ensure a smooth user experience.
